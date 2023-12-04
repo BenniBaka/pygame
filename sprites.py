@@ -37,10 +37,9 @@ Big_ranged_image = pg.image.load("images/Bullet bill.png")
 class Player(pg.sprite.Sprite):
     def __init__(self, all_sprites, enemies, big_enemies, enemies_special): # denne funksjonen kjører når vi lager player
         pg.sprite.Sprite.__init__(self)
-        self.current_frame = 0   # lag denne variabelen for player spriten
+        self.current_frame = 0
         self.last_update = 0
         self.image = player_image
-        self.image.set_colorkey((255,255,255))
         self.rect = self.image.get_rect()
         self.width = self.image.get_width()
         self.height = self.image.get_height()
@@ -177,7 +176,6 @@ class Big_attack(pg.sprite.Sprite):
         pg.sprite.Sprite.__init__(self)
         self.image = Big_ranged_image
         self.rect = self.image.get_rect()
-        self.image.set_colorkey((255,255,255))
         self.enemies = enemies
         self.big_enemies = big_enemies
         self.enemies_special = enemies_special
@@ -210,9 +208,9 @@ class Enemy(pg.sprite.Sprite):
         pg.sprite.Sprite.__init__(self)
         self.image = enemy_image
         self.rect = self.image.get_rect()
-        self.pos_x = random.randint(2200,2600)
+        self.pos_x = random.randint(0,0)
         self.pos_y = random.randint(100,1440)
-        self.speed = random.randint(3,3)
+        self.speed = random.randint(-3,-3)
         self.damage = 10
         self.hp = 1000
 
